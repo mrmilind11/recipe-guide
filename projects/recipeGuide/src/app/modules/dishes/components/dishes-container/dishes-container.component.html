@@ -1,1 +1,8 @@
-<p>dishes-container works!</p>
+<mat-sidenav-container>
+    <mat-sidenav-content>
+        <dishes-list></dishes-list>
+    </mat-sidenav-content>
+    <mat-sidenav mode="side" position="start" [opened]="true">
+        <dishes-side-nav></dishes-side-nav>
+    </mat-sidenav>
+</mat-sidenav-container>
