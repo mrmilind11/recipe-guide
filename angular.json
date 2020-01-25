@@ -12,7 +12,7 @@
       },
       "root": "projects/recipeGuide",
       "sourceRoot": "projects/recipeGuide/src",
-      "prefix": "app",
+      "prefix": "",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
