@@ -1,3 +1,5 @@
+import { SharedModule } from './../shared/shared.module';
+import { MaterialModule } from './../material/material.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -12,7 +14,10 @@ import { CategoryAddEditDialogComponent } from './components/category-add-edit-d
   declarations: [CategoryContainerComponent, CategoryListComponent, CategoryCardComponent, CategoryAddEditDialogComponent],
   imports: [
     CommonModule,
-    CategoryRoutingModule
-  ]
+    CategoryRoutingModule,
+    MaterialModule,
+    SharedModule
+  ],
+  entryComponents: [CategoryAddEditDialogComponent]
 })
 export class CategoryModule { }

@@ -1,3 +1,5 @@
+import { SharedModule } from './../shared/shared.module';
+import { MaterialModule } from './../material/material.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -14,7 +16,9 @@ import { AddEditRecipeComponent } from './components/add-edit-recipe/add-edit-re
   declarations: [DishesContainerComponent, DishesSideNavComponent, DishesListComponent, DishCardComponent, RecipeDetailsComponent, AddEditRecipeComponent],
   imports: [
     CommonModule,
-    DishesRoutingModule
+    DishesRoutingModule,
+    MaterialModule,
+    SharedModule
   ]
 })
 export class DishesModule { }
