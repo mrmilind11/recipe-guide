@@ -1,0 +1,7 @@
+<div>
+    <ng-container *ngFor="let val of levelList;">
+        <mat-icon [svgIcon]="(level >= val) || (hoveredLevel>=val)?'selected':'not-selected'" (click)="onSelect(val)"
+            (mouseenter)="hoverEnter(val)" (mouseleave)="hoverRemoved()">
+        </mat-icon>
+    </ng-container>
+</div>

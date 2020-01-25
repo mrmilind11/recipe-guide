@@ -1,0 +1,16 @@
+.dish-card{
+    width: 250px;
+    height: 250px;
+    padding: 0;
+    .front{
+        display:flex;
+        flex-direction: column;
+        .image-section{
+            height: 200px;
+            width: 200px;
+        }
+    }
+    .back{
+        display:flex
+    }
+}

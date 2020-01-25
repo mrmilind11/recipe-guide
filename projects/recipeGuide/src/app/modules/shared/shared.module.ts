@@ -4,16 +4,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderBarComponent } from './components/header-bar/header-bar.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { DishDifficultyRateComponent } from './components/dish-difficulty-rate/dish-difficulty-rate.component';
 
 
 
 @NgModule({
-  declarations: [HeaderBarComponent, PageNotFoundComponent],
+  declarations: [HeaderBarComponent, PageNotFoundComponent, DishDifficultyRateComponent],
   imports: [
     CommonModule,
     MaterialModule,
     RouterModule
   ],
-  exports: [HeaderBarComponent]
+  exports: [HeaderBarComponent, PageNotFoundComponent, DishDifficultyRateComponent]
 })
 export class SharedModule { }
