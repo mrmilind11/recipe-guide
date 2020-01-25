@@ -1,9 +1,9 @@
 .flex-row{
-    display:flex;
+    display:flex !important;
     flex-direction: row;
 }
 .flex-column{
-    display:flex;
+    display:flex !important;
     flex-direction: column;
 }
 .layout-align-start-start{
@@ -21,6 +21,10 @@
 .layout-align-space-between-start{
     justify-content: space-between;
     align-items: flex-start;
+}
+.layout-align-space-between-center{
+    justify-content: space-between;
+    align-items: center;
 }
 .flex{
     flex: 1;

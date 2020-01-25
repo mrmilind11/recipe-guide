@@ -1,26 +1,39 @@
-<mat-card class="dish-card">
-    <mat-card-content class="front">
-        <div class="type-label"></div>
-        <div class="image-section">
-            <img src="https://b.zmtcdn.com/data/pictures/chains/3/18502363/0a9b1da05f356b20463b6cebf71b2f14_o2_featured_v2.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A"
-                alt="">
-        </div>
-        <div class="desc-section">
-            <div class="desc-name">Idli Wada</div>
-            <div class="flex-row layout-align-start-center">
-                <div class="desc-icon-label flex flex-row layout-align-start-center">
-                    <mat-icon class="icon">timer</mat-icon>
-                    <span>30 min</span>
-                </div>
-                <div class="desc-icon-label flex flex-row layout-align-start-center">
-                    <mat-icon class="icon" svgIcon="chef-hat"></mat-icon>
-                    <span>Moderate</span>
-                </div>
+<mat-card class="dish-card flex-column">
+    <mat-card-content class="card-content flex-column flex">
+        <div class="main-details flex">
+            <div class="image-section">
+                <img src="https://b.zmtcdn.com/data/pictures/chains/3/18502363/0a9b1da05f356b20463b6cebf71b2f14_o2_featured_v2.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A"
+                    alt="">
             </div>
-
+            <div class="main-details-text">
+                <div class="main-details-title">Idli wada</div>
+                <div class="main-details-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum,
+                    dolores perspiciatis. Veritatis minus qui iusto ex. Dicta exercitationem minus, alias maiores culpa
+                    ad
+                    fugiat quisquam molestias cupiditate aut in assumenda.</div>
+            </div>
+        </div>
+        <div class="extra-details flex-row">
+            <div class="desc-icon-label flex flex-row layout-align-start-center">
+                <mat-icon class="icon">timer</mat-icon>
+                <span>30 min</span>
+            </div>
+            <div class="desc-icon-label flex flex-row layout-align-start-center">
+                <mat-icon class="icon" svgIcon="chef-hat"></mat-icon>
+                <span>Moderate</span>
+            </div>
+        </div>
+        <div class="action-buttons flex-row layout-align-space-between-center">
+            <button mat-icon-button>
+                <mat-icon>visibility</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon>delete</mat-icon>
+            </button>
         </div>
     </mat-card-content>
-    <!-- <mat-card-content>
 
-    </mat-card-content> -->
 </mat-card>
