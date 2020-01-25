@@ -28,6 +28,7 @@
               "projects/recipeGuide/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "projects/recipeGuide/src/styles.scss"
             ],
             "scripts": []
@@ -93,6 +94,7 @@
               "projects/recipeGuide/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "projects/recipeGuide/src/styles.scss"
             ],
             "scripts": []
@@ -124,6 +126,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "recipeGuide"
 }
