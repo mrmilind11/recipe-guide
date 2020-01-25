@@ -9,7 +9,11 @@ import { MatIconRegistry } from '@angular/material';
 export class DishCardComponent implements OnInit {
   /************************* Constructor *******************************/
   constructor(
-  ) { }
+    private domSanitizer: DomSanitizer,
+    private matIconRegistry: MatIconRegistry
+  ) {
+    this.matIconRegistry.addSvgIcon('chef-hat', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../../assets/svg/chef-hat-blank.svg'))
+  }
   /************************* Properties ********************************/
   public difficultyLevel = null;
   /************************* Methods ***********************************/

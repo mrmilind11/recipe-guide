@@ -1,0 +1,33 @@
+.flex-row{
+    display:flex;
+    flex-direction: row;
+}
+.flex-column{
+    display:flex;
+    flex-direction: column;
+}
+.layout-align-start-start{
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.layout-align-start-center{
+    justify-content: flex-start;
+    align-items: center;
+}
+.layout-align-start-end{
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+.layout-align-space-between-start{
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.flex{
+    flex: 1;
+}
+.flex-50{
+    flex: .5;
+}
+.flex-25{
+    flex: .25
+}
