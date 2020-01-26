@@ -8,6 +8,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   { path: '', component: DishesContainerComponent },
   { path: 'recipe/:id', component: RecipeDetailsComponent },
+  { path: 'addrecipe', component: AddEditRecipeComponent },
   { path: 'editrecipe/:id', component: AddEditRecipeComponent }
 ];
 
