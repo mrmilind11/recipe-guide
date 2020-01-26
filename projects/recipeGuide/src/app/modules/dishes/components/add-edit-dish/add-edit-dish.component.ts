@@ -76,4 +76,7 @@ export class AddEditDishComponent implements OnInit {
   public goBackToList() {
     this.router.navigate(['/dish'])
   }
+  public trackByIndex(index: any): any {
+    return index;
+  }
 }
