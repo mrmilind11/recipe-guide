@@ -20,6 +20,13 @@ export class DishDatabaseService {
     }
     return of(this.dishList);
   }
+  public getDishById(id): Observable<DishModel> {
+    const dish = _.find(this.dishList, ['_id', id]);
+    if (dish) {
+      return of(dish);
+    }
+    return throwError('No matching id found');
+  }
   public addDish(dish: DishModel): Observable<DishModel> {
     let dishToAdd = _.cloneDeep(dish);
     dishToAdd._id = new Date().getTime().toString();
