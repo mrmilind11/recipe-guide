@@ -1,3 +1,4 @@
+import { DishModel } from './../../../../models/dishes/dish.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-edit-dish.component.scss']
 })
 export class AddEditDishComponent implements OnInit {
-
+  /******************************** Constructor ******************************/
   constructor() { }
-
+  /******************************** Properties *******************************/
+  private defaultDish: DishModel = {
+    '_id': '', 'name': '',
+    'description': '', 'difficulty': null,
+    'imageUrl': '', 'ingredientsList': [],
+    'steps': [], 'time': null,
+    'timeUnit': 'MIN', 'vegType': 'VEG',
+    'categories': []
+  }
+  private defaultStep = { name: '', quantity: '' };
+  public dishData: DishModel;
+  /******************************** Methods **********************************/
   ngOnInit() {
   }
 
