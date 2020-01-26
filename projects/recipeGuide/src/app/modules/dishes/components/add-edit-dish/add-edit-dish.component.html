@@ -1,1 +1,82 @@
-<p>add-edit-dish works!</p>
+<div class="flex-row layout-align-start-center">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+    <div>Back to list</div>
+</div>
+<form class="dish-form">
+    <mat-card>
+        <mat-card-content class="basic-detail">
+            <div class="basic-detail-fields">
+                <mat-form-field class="width-50">
+                    <input matInput type="text" name="dishName" #dishNameInput="ngModel" placeholder="Dish name"
+                        [(ngModel)]="dishData.name" [maxlength]="30" required>
+                    <mat-error *ngIf="dishNameInput.errors">
+                        <span *ngIf="dishNameInput.errors.required">This is required</span>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="width-80">
+                    <textarea matInput type="text" name="dishDescription" #dishDescriptionInput="ngModel"
+                        [(ngModel)]="dishData.description" placeholder="Description" [maxlength]="150"
+                        required></textarea>
+
+                    <mat-error *ngIf="dishDescriptionInput.errors">
+                        <span *ngIf="dishDescriptionInput.errors.required">This is required</span>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="width-80">
+                    <input matInput type="text" name="imageUrl" #imageUrlInput="ngModel" placeholder="Image URL"
+                        [(ngModel)]="dishData.imageUrl">
+                </mat-form-field>
+                <div class="width-80 flex-row layout-align-start-center">
+                    <mat-form-field class="mr-25">
+                        <input matInput type="number" name="timeValue" #timeInput="ngModel" placeholder="Enter time"
+                            [(ngModel)]="dishData.time" required [min]="0" [max]="100">
+                        <mat-error *ngIf="timeInput.errors">
+                            <span *ngIf="timeInput.errors.required"> This is required</span>
+                            <span *ngIf="timeInput.errors.min"> Min. should be 0</span>
+                            <span *ngIf="timeInput.errors.max"> Max. should be 100</span>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-select placeholder="Time unit" name="timeUnit" #timeUnitSelect="ngModel"
+                            [(ngModel)]="dishData.timeUnit" required>
+                            <mat-option value="MIN">minute</mat-option>
+                            <mat-option value="HOUR">hour</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <mat-select placeholder="Difficulty level" name="diffLevel" #diffLevelSelect="ngModel"
+                            [(ngModel)]="dishData.difficulty" required>
+                            <mat-option value="EASY">Easy</mat-option>
+                            <mat-option value="MODERATE">Moderate</mat-option>
+                            <mat-option value="HARD">Hard</mat-option>
+                            <mat-option value="EXPERT">Expert</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="diffLevelSelect.errors">
+                            <span *ngIf="diffLevelSelect.errors.required">This is required</span>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <mat-select name="dishType" #dishTypeSelect="ngModel" [(ngModel)]="dishData.vegType"
+                            placeholder="Dish type" required>
+                            <mat-option value="VEG">Vegeterian</mat-option>
+                            <mat-option value="NON_VEG">Non-vegeterian</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="dishTypeSelect.errors">
+                            <span *ngIf="dishTypeSelect.errors.required">This is required</span>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="image-section">
+                <img src="https://b.zmtcdn.com/data/pictures/chains/3/18502363/0a9b1da05f356b20463b6cebf71b2f14_o2_featured_v2.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A"
+                    alt="">
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+</form>

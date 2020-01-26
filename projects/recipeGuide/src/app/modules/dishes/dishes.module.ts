@@ -10,6 +10,7 @@ import { DishesListComponent } from './components/dishes-list/dishes-list.compon
 import { DishCardComponent } from './components/dish-card/dish-card.component';
 import { DishDetailsComponent } from './components/dish-details/dish-details.component';
 import { AddEditDishComponent } from './components/add-edit-dish/add-edit-dish.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { AddEditDishComponent } from './components/add-edit-dish/add-edit-dish.c
     CommonModule,
     DishesRoutingModule,
     MaterialModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ]
 })
 export class DishesModule { }

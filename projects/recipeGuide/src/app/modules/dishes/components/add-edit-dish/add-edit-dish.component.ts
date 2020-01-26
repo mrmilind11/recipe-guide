@@ -7,7 +7,10 @@ import _ from 'lodash';
 @Component({
   selector: 'add-edit-dish',
   templateUrl: './add-edit-dish.component.html',
-  styleUrls: ['./add-edit-dish.component.scss']
+  styleUrls: ['./add-edit-dish.component.scss'],
+  host: {
+    class: 'mat-app-background flex flex-column'
+  }
 })
 export class AddEditDishComponent implements OnInit {
   /******************************** Constructor ******************************/
@@ -22,7 +25,7 @@ export class AddEditDishComponent implements OnInit {
     'description': '', 'difficulty': null,
     'imageUrl': '', 'ingredientsList': [],
     'steps': [], 'time': null,
-    'timeUnit': 'MIN', 'vegType': 'VEG',
+    'timeUnit': null, 'vegType': null,
     'categories': []
   }
   private ingredient = { name: '', quantity: '' };
