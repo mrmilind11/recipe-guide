@@ -1,5 +1,5 @@
-import { AddEditRecipeComponent } from './components/add-edit-recipe/add-edit-recipe.component';
-import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
+import { AddEditDishComponent } from './components/add-edit-dish/add-edit-dish.component';
+import { DishDetailsComponent } from './components/dish-details/dish-details.component';
 import { DishesContainerComponent } from './components/dishes-container/dishes-container.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -7,9 +7,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: '', component: DishesContainerComponent },
-  { path: 'recipe/:id', component: RecipeDetailsComponent },
-  { path: 'addrecipe', component: AddEditRecipeComponent },
-  { path: 'editrecipe/:id', component: AddEditRecipeComponent }
+  { path: 'details/:id', component: DishDetailsComponent },
+  { path: 'add', component: AddEditDishComponent },
+  { path: 'edit/:id', component: AddEditDishComponent }
 ];
 
 @NgModule({

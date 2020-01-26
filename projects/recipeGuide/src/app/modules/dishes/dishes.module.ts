@@ -8,12 +8,12 @@ import { DishesContainerComponent } from './components/dishes-container/dishes-c
 import { DishesSideNavComponent } from './components/dishes-side-nav/dishes-side-nav.component';
 import { DishesListComponent } from './components/dishes-list/dishes-list.component';
 import { DishCardComponent } from './components/dish-card/dish-card.component';
-import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
-import { AddEditRecipeComponent } from './components/add-edit-recipe/add-edit-recipe.component';
+import { DishDetailsComponent } from './components/dish-details/dish-details.component';
+import { AddEditDishComponent } from './components/add-edit-dish/add-edit-dish.component';
 
 
 @NgModule({
-  declarations: [DishesContainerComponent, DishesSideNavComponent, DishesListComponent, DishCardComponent, RecipeDetailsComponent, AddEditRecipeComponent],
+  declarations: [DishesContainerComponent, DishesSideNavComponent, DishesListComponent, DishCardComponent, DishDetailsComponent, AddEditDishComponent],
   imports: [
     CommonModule,
     DishesRoutingModule,
