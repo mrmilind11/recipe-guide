@@ -2,5 +2,7 @@
     <mat-icon>add</mat-icon>
 </button>
 <div>
-    <dish-card></dish-card>
+    <ng-container *ngFor="let dish of dishList;let index=index;trackBy:trackByIndex">
+        <dish-card [(dishData)]="dishList[index]" (onDelete)="onDelete(index)"></dish-card>
+    </ng-container>
 </div>

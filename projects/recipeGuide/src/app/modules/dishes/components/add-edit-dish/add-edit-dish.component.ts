@@ -62,16 +62,16 @@ export class AddEditDishComponent implements OnInit {
   }
   public saveData() {
     console.log('Dish data', this.dishData)
-    // if (this.dishId) {
-    //   this.dishDatabaseService.addDish(this.dishData).pipe(take(1)).subscribe((response) => {
-    //     this.goBackToList();
-    //   })
-    // }
-    // else {
-    //   this.dishDatabaseService.editDish(this.dishData).pipe(take(1)).subscribe((response) => {
-    //     this.goBackToList();
-    //   })
-    // }
+    if (this.dishId) {
+      this.dishDatabaseService.editDish(this.dishData).pipe(take(1)).subscribe((response) => {
+        this.goBackToList();
+      })
+    }
+    else {
+      this.dishDatabaseService.addDish(this.dishData).pipe(take(1)).subscribe((response) => {
+        this.goBackToList();
+      })
+    }
   }
 
   public goBackToList() {

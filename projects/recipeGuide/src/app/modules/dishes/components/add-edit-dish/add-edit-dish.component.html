@@ -1,6 +1,6 @@
 <div class="flex-row layout-align-start-center">
-    <mat-icon>keyboard_arrow_left</mat-icon>
-    <div>Back to list</div>
+    <mat-icon (click)="goBackToList()">keyboard_arrow_left</mat-icon>
+    <div (click)="goBackToList()">Back to list</div>
 </div>
 <form #dishForm="ngForm" class="dish-form">
     <mat-card>
@@ -16,7 +16,7 @@
                     </mat-form-field>
                     <mat-form-field class="width-80">
                         <textarea matInput type="text" name="dishDescription" #dishDescriptionInput="ngModel"
-                            [(ngModel)]="dishData.description" placeholder="Description" [maxlength]="150"
+                            [(ngModel)]="dishData.description" placeholder="Description" [maxlength]="250"
                             required></textarea>
 
                         <mat-error *ngIf="dishDescriptionInput.errors">

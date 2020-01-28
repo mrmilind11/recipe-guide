@@ -7,7 +7,9 @@ import { Observable, of, throwError } from 'rxjs';
 })
 export class DishDatabaseService {
   /**************************************** Constructor **************************************/
-  constructor() { }
+  constructor() {
+    this.dishList = JSON.parse(localStorage.getItem('dishList')) || [];
+  }
   /**************************************** Properties ***************************************/
   private dishList: DishModel[] = [];
   /**************************************** Methods ******************************************/
@@ -31,12 +33,14 @@ export class DishDatabaseService {
     let dishToAdd = _.cloneDeep(dish);
     dishToAdd._id = new Date().getTime().toString();
     this.dishList.push(dishToAdd);
+    localStorage.setItem('dishList', JSON.stringify(this.dishList));
     return of(dishToAdd);
   }
   public editDish(dish: DishModel): Observable<DishModel> {
     let dishIndex = _.findIndex(this.dishList, ['_id', dish._id]);
     if (dishIndex !== -1) {
       this.dishList[dishIndex] = _.cloneDeep(dish);
+      localStorage.setItem('dishList', JSON.stringify(this.dishList));
       return of(dish);
     }
     return throwError('No matching id found');
@@ -46,6 +50,7 @@ export class DishDatabaseService {
     if (dishIndex !== -1) {
       const deletedDish = _.cloneDeep(this.dishList[dishIndex]);
       this.dishList.splice(dishIndex, 1);
+      localStorage.setItem('dishList', JSON.stringify(this.dishList));
       return of(deletedDish);
     }
     return throwError('No matching id found');

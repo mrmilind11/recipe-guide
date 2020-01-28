@@ -1,40 +1,35 @@
 <mat-card class="dish-card flex-column">
     <mat-card-content class="card-content flex-column flex">
         <div class="main-details flex">
-            <div class="dish-type-flag non-veg">
+            <div class="dish-type-flag veg" [ngClass]="{'veg': dishData.vegType === 'NON_VEG'}">
                 <div class="circle"></div>
             </div>
             <div class="image-section">
-                <!-- <img src="https://b.zmtcdn.com/data/pictures/chains/3/18502363/0a9b1da05f356b20463b6cebf71b2f14_o2_featured_v2.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A"
-                    alt=""> -->
-                <img src="sa" alt="" blankDishImage="">
+                <img [src]="dishData.imageUrl" alt="" blankDishImage="">
             </div>
             <div class="main-details-text">
-                <div class="main-details-title">Idli wada</div>
-                <div class="main-details-description">{{'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum,
-                    dolores perspiciatis. Veritatis minus qui iusto ex. Dicta exercitationem minus, alias maiores culpa
-                    ad
-                    fugiat quisquam molestias cupiditate aut in assumenda.' | textLimit}}</div>
+                <div class="main-details-title">{{dishData.name}}</div>
+                <div class="main-details-description">{{dishData.description | textLimit}}</div>
             </div>
         </div>
         <div class="extra-details flex-row">
             <div class="desc-icon-label flex flex-row layout-align-start-center">
                 <mat-icon class="icon">timer</mat-icon>
-                <span>30 min</span>
+                <span>{{dishData.time}} {{timeUnitMap[dishData.timeUnit]}}</span>
             </div>
             <div class="desc-icon-label flex flex-row layout-align-start-center">
                 <mat-icon class="icon" svgIcon="chef-hat"></mat-icon>
-                <span>Moderate</span>
+                <span>{{difficultyMap[dishData.difficulty]}}</span>
             </div>
         </div>
         <div class="action-buttons flex-row layout-align-space-between-center">
-            <button mat-icon-button>
+            <button mat-icon-button (click)="viewDish()">
                 <mat-icon>visibility</mat-icon>
             </button>
-            <button mat-icon-button>
+            <button mat-icon-button (click)="editDish()">
                 <mat-icon>edit</mat-icon>
             </button>
-            <button mat-icon-button>
+            <button mat-icon-button (click)="deleteDish()">
                 <mat-icon>delete</mat-icon>
             </button>
         </div>
