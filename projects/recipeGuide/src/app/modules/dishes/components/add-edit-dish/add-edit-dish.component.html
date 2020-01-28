@@ -2,7 +2,7 @@
     <mat-icon>keyboard_arrow_left</mat-icon>
     <div>Back to list</div>
 </div>
-<form class="dish-form">
+<form #dishForm="ngForm" class="dish-form">
     <mat-card>
         <mat-card-content>
             <div class="basic-detail">
@@ -82,27 +82,52 @@
             <div class="ingredients-section">
                 <h4>Ingredients</h4>
                 <div *ngFor="let ingredient of dishData.ingredientsList; let index=index;trackBy:trackByIndex">
-                    <mat-form-field>
-                        <input matInput name="ingName" #ingNameInput="ngModel" type="text"
+                    <mat-form-field class="mr-25">
+                        <input matInput name="ingName_{{index}}" #ingNameInput="ngModel" type="text"
                             [(ngModel)]="dishData.ingredientsList[index].name" placeholder="Ingredient name" required>
                         <mat-error *ngIf="ingNameInput.errors">
                             <span *ngIf="ingNameInput.errors.required">This is required</span>
                         </mat-error>
                     </mat-form-field>
                     <mat-form-field>
-                        <input matInput name="ingQty" #ingQtyInput="ngModel" type="text"
+                        <input matInput name="ingQty_{{index}}" #ingQtyInput="ngModel" type="text"
                             [(ngModel)]="dishData.ingredientsList[index].quantity" placeholder="Quantity" required>
                         <mat-error *ngIf="ingQtyInput.errors">
                             <span *ngIf="ingQtyInput.errors.required">This is required</span>
                         </mat-error>
                     </mat-form-field>
-                    <button mat-icon-button (click)="removeIngredient(index)">
-                        <mat-icon>close</mat-icon>
+                    <button mat-icon-button (click)="removeIngredient(index)" type="button"
+                        *ngIf="dishData.ingredientsList.length>1">
+                        <mat-icon class="small-ico-btn">close</mat-icon>
                     </button>
                 </div>
-                <button mat-icon-button (click)="addIngredient()">
+                <button mat-icon-button (click)="addIngredient()" type="button">
                     <mat-icon>add</mat-icon>
                 </button>
+            </div>
+            <div class="steps-section">
+                <h4>Steps</h4>
+                <div class="width-70 flex-row" *ngFor="let step of dishData.steps;let index=index;trackBy:trackByIndex">
+                    <mat-form-field class="flex">
+                        <input matInput name="stepText_{{index}}" type="text" #stepInput="ngModel"
+                            [(ngModel)]="dishData.steps[index]" placeholder="Step" required [maxlength]="150">
+                        <mat-error *ngIf="stepInput.errors">
+                            <span *ngIf="stepInput.errors.required">This is required</span>
+                        </mat-error>
+                    </mat-form-field>
+                    <button mat-icon-button (click)="removeStep(index)" type="button" *ngIf="dishData.steps.length>1">
+                        <mat-icon class="small-ico-btn">close</mat-icon>
+                    </button>
+                </div>
+                <button mat-icon-button (click)="addStep()" type="button">
+                    <mat-icon>add</mat-icon>
+                </button>
+            </div>
+            <div class="action-bar">
+                <div>
+                    <button mat-raised-button color="primary" [disabled]="dishForm.invalid"
+                        (click)="saveData()">Save</button>
+                </div>
             </div>
         </mat-card-content>
     </mat-card>

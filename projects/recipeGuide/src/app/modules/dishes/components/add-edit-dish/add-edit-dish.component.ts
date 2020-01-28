@@ -23,8 +23,8 @@ export class AddEditDishComponent implements OnInit {
   private defaultDish: DishModel = {
     '_id': '', 'name': '',
     'description': '', 'difficulty': null,
-    'imageUrl': '', 'ingredientsList': [],
-    'steps': [], 'time': null,
+    'imageUrl': '', 'ingredientsList': [{ 'name': '', 'quantity': '' }],
+    'steps': [''], 'time': null,
     'timeUnit': null, 'vegType': null,
     'categories': []
   }
@@ -61,16 +61,17 @@ export class AddEditDishComponent implements OnInit {
     this.dishData.steps.splice(index, 1);
   }
   public saveData() {
-    if (this.dishId) {
-      this.dishDatabaseService.addDish(this.dishData).pipe(take(1)).subscribe((response) => {
-        this.goBackToList();
-      })
-    }
-    else {
-      this.dishDatabaseService.editDish(this.dishData).pipe(take(1)).subscribe((response) => {
-        this.goBackToList();
-      })
-    }
+    console.log('Dish data', this.dishData)
+    // if (this.dishId) {
+    //   this.dishDatabaseService.addDish(this.dishData).pipe(take(1)).subscribe((response) => {
+    //     this.goBackToList();
+    //   })
+    // }
+    // else {
+    //   this.dishDatabaseService.editDish(this.dishData).pipe(take(1)).subscribe((response) => {
+    //     this.goBackToList();
+    //   })
+    // }
   }
 
   public goBackToList() {
