@@ -1,8 +1,8 @@
 <button mat-fab color="primary" class="add-btn" [routerLink]="['add']">
     <mat-icon>add</mat-icon>
 </button>
-<div>
+<div class="card-container">
     <ng-container *ngFor="let dish of dishList;let index=index;trackBy:trackByIndex">
-        <dish-card [(dishData)]="dishList[index]" (onDelete)="onDelete(index)"></dish-card>
+        <dish-card [(dishData)]="dishList[index]" (onDelete)="onDelete(index)" class="dish-card"></dish-card>
     </ng-container>
 </div>
